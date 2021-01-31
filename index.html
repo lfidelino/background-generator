@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/26250fd57e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://npmcdn.com/tootik@1.0.2/css/tootik.min.css" />
+    <link rel="stylesheet" href="styles/css/style.min.css" />
+    <title>Background Generator</title>
+  </head>
+
+  <body>
+    <main class="flex flex-col justify-center items-center pt-12 pb-24">
+      <header id="header__title">
+        <h1 id="title" class="text-center text-4xl bg-black bg-opacity-25 p-3 text-yellow-400">BACKGROUND GENERATOR</h1>
+      </header>
+
+      <section id="section__input-color" class="flex flex-wrap justify-center mt-6">
+        <input
+          type="color"
+          name="color1"
+          id="input__color1"
+          class="w-20 h-16 bg-transparent focus:outline-none px-1"
+          value="#302b63"
+        />
+        <input
+          type="color"
+          name="color2"
+          id="input__color2"
+          class="w-20 h-16 bg-transparent focus:outline-none px-1"
+          value="#24243e"
+        />
+      </section>
+
+      <section
+        id="section__button-degrees"
+        class="flex flex-wrap flex-col justify-center mt-2 bg-black bg-opacity-25 p-2"
+      >
+        <section class="text-center">
+          <button id="button__degrees-0" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-up w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-45" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-up rotate45 w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-90" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-right w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-135" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-right rotate45 w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-180" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-down w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-225" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-down rotate45 w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-270" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-left w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-315" class="focus:outline-none">
+            <i
+              class="fas fa-arrow-left rotate45 w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+          <button id="button__degrees-360" class="focus:outline-none">
+            <i
+              class="fas fa-circle w-6 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 hover:text-yellow-200"
+            ></i>
+          </button>
+        </section>
+
+        <section class="text-center py-6 flex justify-center">
+          <i
+            id="i__compass"
+            class="fas fa-arrow-up w-12 h-6 rounded-full flex justify-center items-center text-yellow-400 p-4 text-9xl border-2 border-yellow-400 p-24"
+          ></i>
+        </section>
+
+        <section class="text-center">
+          <input
+            type="number"
+            id="input__number-deg"
+            class="w-14 bg-transparent text-yellow-400 text-center border border-yellow-500 outline-none hover:text-yellow-200 focus:text-yellow-200"
+            min="0"
+            max="360"
+            value="180"
+            step="1"
+          />
+          <input
+            type="range"
+            id="input__range-deg"
+            class="align-middle w-full mt-6 mb-4"
+            min="0"
+            max="360"
+            value="180"
+            step="1"
+          />
+        </section>
+      </section>
+
+      <section id="section__css" class="mt-4 bg-black bg-opacity-25 p-3 text-yellow-400">
+        <button id="button__copy" class="focus:outline-none hover:text-yellow-200" data-tootik="Click me to copy!">
+          <h3 id="h3__css" class="inline-block break-words">
+            <i class="fas fa-copy mr-2"></i>
+            background: linear-gradient(rgb(48, 43, 99), rgb(36, 36, 62));
+          </h3>
+        </button>
+      </section>
+
+      <footer id="footer" class="bg-yellow-400 w-full text-center">
+        <span class="text-xs">&#169; 2021 Lawrence Fidelino</span> •
+        <a href="https://www.github.com/lfidelino" target="_blank" class="text-xs text-purple-900">GitHub</a> •
+        <a href="https://www.codepen.io/lfidelino" target="_blank" class="text-xs text-purple-900">CodePen</a> •
+        <a href="https://www.dev.to/lfidelino" target="_blank" class="text-xs text-purple-900">DEV.to</a>
+      </footer>
+    </main>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
