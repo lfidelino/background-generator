@@ -38,13 +38,27 @@ var updateBackground = () => {
   css.append(text);
 };
 
-var updateCompass = () => {
+var updateCompass = async () => {
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
   if (inputRangeDeg.value === '360') {
+    iCompass.classList.add('animate__animated', 'animate__zoomOut');
+    document.documentElement.style.setProperty('--animate-duration', '0.25s');
+    await delay(250);
     iCompass.classList.remove('fa-arrow-up');
     iCompass.classList.add('fa-circle');
+    iCompass.classList.remove('animate__animated', 'animate__zoomOut');
+    iCompass.classList.add('animate__animated', 'animate__zoomIn');
   } else {
-    iCompass.classList.remove('fa-circle');
-    iCompass.classList.add('fa-arrow-up');
+    if (!iCompass.classList.contains('fa-arrow-up')) {
+      iCompass.classList.add('animate__animated', 'animate__zoomOut');
+      document.documentElement.style.setProperty('--animate-duration', '0.25s');
+      await delay(250);
+      iCompass.classList.remove('fa-circle');
+      iCompass.classList.add('fa-arrow-up');
+      iCompass.classList.remove('animate__animated', 'animate__zoomOut');
+      iCompass.classList.add('animate__animated', 'animate__zoomIn');
+    }
   }
   iCompass.style.transform = `rotate(${inputRangeDeg.value}deg)`;
 };
