@@ -43,8 +43,8 @@ var updateCompass = async () => {
 
   if (inputRangeDeg.value === '360') {
     iCompass.classList.add('animate__animated', 'animate__zoomOut');
-    document.documentElement.style.setProperty('--animate-duration', '0.25s');
-    await delay(250);
+    document.documentElement.style.setProperty('--animate-duration', '0.5s');
+    await delay(100);
     iCompass.classList.remove('fa-arrow-up');
     iCompass.classList.add('fa-circle');
     iCompass.classList.remove('animate__animated', 'animate__zoomOut');
@@ -52,8 +52,8 @@ var updateCompass = async () => {
   } else {
     if (!iCompass.classList.contains('fa-arrow-up')) {
       iCompass.classList.add('animate__animated', 'animate__zoomOut');
-      document.documentElement.style.setProperty('--animate-duration', '0.25s');
-      await delay(250);
+      document.documentElement.style.setProperty('--animate-duration', '0.5s');
+      await delay(100);
       iCompass.classList.remove('fa-circle');
       iCompass.classList.add('fa-arrow-up');
       iCompass.classList.remove('animate__animated', 'animate__zoomOut');
