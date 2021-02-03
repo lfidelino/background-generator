@@ -1,32 +1,32 @@
-var body = document.getElementsByTagName('body')[0];
-var inputColor1 = document.getElementById('input__color1');
-var inputColor2 = document.getElementById('input__color2');
-var button0 = document.getElementById('button__degrees-0');
-var button45 = document.getElementById('button__degrees-45');
-var button90 = document.getElementById('button__degrees-90');
-var button135 = document.getElementById('button__degrees-135');
-var button180 = document.getElementById('button__degrees-180');
-var button225 = document.getElementById('button__degrees-225');
-var button270 = document.getElementById('button__degrees-270');
-var button315 = document.getElementById('button__degrees-315');
-var button360 = document.getElementById('button__degrees-360');
-var buttonRandomize = document.getElementById('button__randomize');
-var iCompass = document.getElementById('i__compass');
-var inputRangeDeg = document.getElementById('input__range-deg');
-var inputNumberDeg = document.getElementById('input__number-deg');
-var buttonCopy = document.getElementById('button__copy');
-var css = document.getElementById('h3__css');
+const body = document.getElementsByTagName('body')[0];
+const inputColor1 = document.getElementById('input__color1');
+const inputColor2 = document.getElementById('input__color2');
+const button0 = document.getElementById('button__degrees-0');
+const button45 = document.getElementById('button__degrees-45');
+const button90 = document.getElementById('button__degrees-90');
+const button135 = document.getElementById('button__degrees-135');
+const button180 = document.getElementById('button__degrees-180');
+const button225 = document.getElementById('button__degrees-225');
+const button270 = document.getElementById('button__degrees-270');
+const button315 = document.getElementById('button__degrees-315');
+const button360 = document.getElementById('button__degrees-360');
+const buttonRandomize = document.getElementById('button__randomize');
+const iCompass = document.getElementById('i__compass');
+const inputRangeDeg = document.getElementById('input__range-deg');
+const inputNumberDeg = document.getElementById('input__number-deg');
+const buttonCopy = document.getElementById('button__copy');
+const css = document.getElementById('h3__css');
 
 // NOTE Defaults
-var color1 = inputColor1.value;
-var color2 = inputColor2.value;
+let color1 = inputColor1.value;
+let color2 = inputColor2.value;
 
 // NOTE Event Functions
-var updateBackground = () => {
-  var i = document.createElement('i');
+const updateBackground = () => {
+  let i = document.createElement('i');
   i.classList = 'fas fa-copy mr-2';
 
-  var text;
+  let text;
   if (inputRangeDeg.value == '360') body.style.background = `radial-gradient(circle, ${color1}, ${color2})`;
   else body.style.background = `linear-gradient(${inputRangeDeg.value}deg, ${color1}, ${color2})`;
 
@@ -38,7 +38,7 @@ var updateBackground = () => {
   css.append(text);
 };
 
-var updateCompass = async () => {
+const updateCompass = async () => {
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
   if (inputRangeDeg.value === '360') {
@@ -63,11 +63,11 @@ var updateCompass = async () => {
   iCompass.style.transform = `rotate(${inputRangeDeg.value}deg)`;
 };
 
-var getRandomInteger = (min, max) => {
+const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-var convertToPaddedHex = (int) => {
+const convertToPaddedHex = (int) => {
   hex = int.toString(16);
   if (hex.length < 2) {
     return `0${hex}`;
@@ -75,7 +75,7 @@ var convertToPaddedHex = (int) => {
   return hex;
 };
 
-var randomizeColors = () => {
+const randomizeColors = () => {
   color1Arr = [getRandomInteger(0, 255), getRandomInteger(0, 255), getRandomInteger(0, 255)];
   color2Arr = [getRandomInteger(0, 255), getRandomInteger(0, 255), getRandomInteger(0, 255)];
 
@@ -170,7 +170,7 @@ inputNumberDeg.addEventListener('input', () => {
 });
 
 buttonCopy.addEventListener('click', () => {
-  var dummy = document.createElement('textarea');
+  const dummy = document.createElement('textarea');
   document.body.appendChild(dummy);
   dummy.value = css.innerText;
   dummy.select();
