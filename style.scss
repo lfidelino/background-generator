@@ -2,10 +2,10 @@ body {
   position: relative;
   min-height: 100vh;
   background: linear-gradient(45deg, rgb(48, 43, 99), rgb(36, 36, 62));
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-input[type="color"] {
+input[type='color'] {
   &:hover {
     cursor: pointer;
     background-color: #00000088;
@@ -39,7 +39,7 @@ input[type="color"] {
   width: 100%;
 }
 
-input[type="range"] {
+input[type='range'] {
   background-color: transparent;
   -webkit-appearance: none;
 
@@ -137,12 +137,12 @@ input[type="range"] {
 }
 
 @supports (-ms-ime-align: auto) {
-  input[type="range"] {
+  input[type='range'] {
     margin: 0;
   }
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 
   &::-webkit-outer-spin-button {
